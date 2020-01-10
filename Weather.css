@@ -1,0 +1,161 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Gotham Rounded', sans-serif;
+}
+
+html , body{
+  height: 100%;
+  color:black;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  display: flexbox;
+}
+
+#title {
+  min-height: 90px;
+  display: flex;
+  width: 100%;
+  background: lightblue;
+}
+
+h1 {
+  color:white;
+  width: 100%;
+  margin: auto;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+.city-search {
+  margin-top: 40px;
+  font-size: 2rem;
+  outline: none;
+  border: 1px solid #777;
+  border-radius: 5px;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+#today {
+  margin:20px;
+  padding:20px;
+  border-radius:3px;
+  border: 1px solid white;
+  font-size: 14px;
+}
+
+.mainCityLabel {
+  display:flex;
+}
+
+.uv span {
+  border-radius: 5px;
+  padding:5px;
+  color: red;
+  font-weight: bold;
+}
+
+
+#forecast .five-day div {
+  padding:5px;
+  background-color: lightblue;
+  color:white;
+  border-radius:10px;
+  margin:5px;
+  text-align:center;
+}
+
+#city-search {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+#search {
+  display:flex;
+  margin-left:5px;
+}
+
+#search input {
+  border: 1px solid darkslategrey;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius:5px;
+  width: 80%;
+}
+
+#search button {
+  background-color: lightgray;
+  cursor: pointer;
+  position: initial;
+  height: 100px;
+  width: 50px;
+  border-radius: 5px;
+  border: 0px solid transparent;
+}
+
+#sampleSearches { 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 5px 20px 5px;
+  background-color:white;
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+}
+
+#sampleSearches button { 
+  border: 0.25px solid darkslategrey;
+  padding: 20px;
+  cursor: pointer;
+  background-color: white;
+  font-size: 14px;
+}
+
+#searchError{
+  height:18px;
+  margin-left: 5px;
+  color:red;
+}
+
+
+@media only screen and (min-width: 769px) {
+  #searchPanel{
+    display: flex;
+    align-items: stretch;
+    min-height: calc( 120% - 80px);
+  }
+
+  #forecast h2, #forecast .five-day{
+    padding: 0 30px;
+  }
+
+  #forecast .five-day{
+    display:flex;
+    justify-content: space-between;
+  }
+
+  #forecast .five-day div{
+    width:calc(30% - 40px);
+  }
+
+  #city-search{
+    min-width:35%;
+  }
+
+  #today, #forecast {
+    min-height: 50%;
+    color: white;
+    
+    
+  }
+}
+
+
+@media only screen and (min-width: 100px) {
+  
+  #forecast .five-day div{
+    width:calc(40% - 60px);
+  }
+}
