@@ -4,7 +4,7 @@
 }
 
 html , body{
-  height: 100%;
+  height: 150%;
   color:black;
 }
 
@@ -51,9 +51,9 @@ h1 {
 }
 
 .uv span {
-  border-radius: 5px;
-  padding:5px;
-  color: red;
+  border-radius: 15px;
+  padding:10px;
+  color:purple;
   font-weight: bold;
 }
 
@@ -95,25 +95,7 @@ h1 {
   border: 0px solid transparent;
 }
 
-#sampleSearches { 
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  margin: 20px 5px 20px 5px;
-  background-color:white;
-  border: 1px solid #dfdfdf;
-  border-radius: 5px;
-}
-
-#sampleSearches button { 
-  border: 0.25px solid darkslategrey;
-  padding: 20px;
-  cursor: pointer;
-  background-color: white;
-  font-size: 14px;
-}
-
-#searchError{
+#search-error{
   height:18px;
   margin-left: 5px;
   color:red;
@@ -146,12 +128,11 @@ h1 {
 
   #today, #forecast {
     min-height: 50%;
-    color: white;
+    color:black;
     
     
   }
 }
-
 
 @media only screen and (min-width: 100px) {
   

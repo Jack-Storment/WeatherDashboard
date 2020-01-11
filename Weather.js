@@ -1,22 +1,23 @@
 const apiKey = "f2740daab2546918bc8daff8d70329e0";
 
+ let searchedCities = [];
+  if( localStorage.getItem("city-search")){
+    searchedCities = JSON.parse(localStorage.getItem("city-search"));
+  }
   let mph = (speed) => {
     return parseFloat(speed * (3600/1609.344)).toFixed(2);
   } 
   
-  let searchedCities = [];
-  if( localStorage.getItem("city-search")){
-    searchedCities = JSON.parse(localStorage.getItem("city-search"));
-  }
+  
   
     let getDate = function(days){
-    let someDate = new Date();
+    let aDate = new Date();
     let numberOfDaysToAdd = days ;
-    someDate.setDate(someDate.getDate() + numberOfDaysToAdd); 
+    aDate.setDate(aDate.getDate() + numberOfDaysToAdd); 
   
-    let dd = someDate.getDate();
-    let mm = someDate.getMonth() + 1;
-    let y = someDate.getFullYear();
+    let dd = aDate.getDate();
+    let mm = aDate.getMonth() + 1;
+    let y = aDate.getFullYear();
   
     return mm + " / "+ dd + " / "+ y;
   }
@@ -68,9 +69,9 @@ $(document).ready(function() {
 
       },error: function () {
         if ($("#search input").val() === ""){
-          $("#searchError").html("Please pick a city"); 
+          $("#search-error").html("Pick a city"); 
         }else{
-          $("#searchError").html("Sorry we have no data on that city");
+          $("#search-error").html("Data on that city is not available");
         }
       }
     });
@@ -82,10 +83,6 @@ $(document).ready(function() {
         currentConditions("Cary", false);
       }
     
-      $("#sampleSearches button").on( "click", function() {
-        currentConditions($(this).html().toString(), false);
-      });
-    
       $("#search button").on( "click", function() {
         currentConditions($("#search input").val(), true);     
       });
@@ -93,20 +90,4 @@ $(document).ready(function() {
       
     
       });
-
-function setWeatherData(data, place) {
-  locationElement.textContent = place
-  statusElement.textContent = data.summary
-  temperatureElement.textContent = data.temperature
-  precipitationElement.textContent = `${data.precipProbability * 100}%`
-  windElement.textContent = data.windSpeed
-  icon.set('icon', data.icon)
-  icon.play()
-}
-
-const statusElement = document.querySelector('[data-status]')
-const temperatureElement = document.querySelector('[data-temperature]')
-const precipitationElement = document.querySelector('[data-precipitation]')
-const windElement = document.querySelector('[data-wind]')
-icon.set('icon', 'clear-day')
-icon.play()
+  //Google Seearch Suggestions
